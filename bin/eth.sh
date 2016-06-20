@@ -18,17 +18,17 @@ echo "Public IP: $IP"
 
 if [[ -f $(which geth 2>/dev/null) ]]
 then
-	echo "Starting geth"
-	echo geth --rpc --bootnodes "enode://09fbeec0d047e9a37e63f60f8618aa9df0e49271f3fadb2c070dc09e2099b95827b63a8b837c6fd01d0802d457dd83e3bd48bd3e6509f8209ed90dabbc30e3d3@52.16.188.185:30303" --nat "extip:$IP"
-	geth --rpc --bootnodes "enode://09fbeec0d047e9a37e63f60f8618aa9df0e49271f3fadb2c070dc09e2099b95827b63a8b837c6fd01d0802d457dd83e3bd48bd3e6509f8209ed90dabbc30e3d3@52.16.188.185:30303" --nat "extip:$IP"
-
+	echo "Starting gkr"
+	echo gkr --rpc --bootnodes "enode://0fb920467bdc123eeee3c132519457967227ed80d255fc210b09bc070fb4612df90532604629f91c3f1912c298d5a20ef4c22824d1be33fef270b07448760362@[::]:17171" --nat "extip:$IP"
+	gkr --rpc --bootnodes "enode://382b74a663581fe3559b52521415f9e7ee596f4873e0e88f8406e0e025d6ed1f2bed55f1f9739cab7d1e247cd5bcc4d944add0c282ea7232155da74b895f0e75@[::]:17172" --nat "extip:$IP"
+	gkr --rpc --bootnodes "enode://809e1781a9da785ee6084ff38011f771c61ba9dce1e372ca8cbf2de9af119d9df5ded7728bc03f0b765b8ec9d14a3b296e6b248239d6cc8e4b2fbc3d3f9796a1@[::]:17173" --nat "extip:$IP"
 elif [[ -f $(which eth 2>/dev/null) ]]
 then
-	echo "Starting eth"
-	echo eth --bootstrap --peers 50 --remote 52.16.188.185:30303 --mining off --json-rpc -v 3 --public-ip $IP --listen-ip $LOCALIP --master $1
-	eth --bootstrap --peers 50 --remote 52.16.188.185:30303 --mining off --json-rpc -v 3 --public-ip $IP --listen-ip $LOCALIP --master $1
+	echo "Starting KR"
+	echo eth --bootstrap --peers 50 --remote 52.16.188.185:17171 --mining off --json-rpc -v 3 --public-ip $IP --listen-ip $LOCALIP --master $1
+	eth --bootstrap --peers 50 --remote 52.16.188.185:17171 --mining off --json-rpc -v 3 --public-ip $IP --listen-ip $LOCALIP --master $1
 
 else
-	echo "Ethereum was not found!"
+	echo "Krypton was not found!"
 	exit 1;
 fi
