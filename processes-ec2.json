@@ -31,12 +31,12 @@
     {
       "NODE_ENV"        : "production",
       "RPC_HOST"        : "localhost",
-      "RPC_PORT"        : "8545",
-      "LISTENING_PORT"  : "30303",
-      "INSTANCE_NAME"   : "",
-      "CONTACT_DETAILS" : "",
+      "RPC_PORT"        : "8888",
+      "LISTENING_PORT"  : "17171",
+      "INSTANCE_NAME"   : "covertress",
+      "CONTACT_DETAILS" : "covertress@gmail.com",
       "WS_SERVER"       : "wss://rpc.ethstats.net",
-      "WS_SECRET"       : "see http://forum.ethereum.org/discussion/2112/how-to-add-yourself-to-the-stats-dashboard-its-not-automatic",
+      "WS_SECRET"       : "a38e1e50b1b82fa",
       "VERBOSITY"       : 2
     }
   }
