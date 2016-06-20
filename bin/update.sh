@@ -35,10 +35,10 @@ then
 else
 	if [[ -f /usr/bin/eth ]];
 	then
-		ethtype="eth"
-		success "Found eth"
+		ethtype="KR"
+		success "Found KR"
 	else
-		error "Couldn't find ethereum"
+		error "Couldn't find Krypton"
 		exit 0
 	fi
 fi
@@ -58,7 +58,7 @@ heading "Killing remaining node processes"
 echo `ps auxww | grep node | awk '{print $2}'`
 kill -9 `ps auxww | grep node | awk '{print $2}'`
 
-heading "Removing ethereum"
+heading "Removing Krypton"
 sudo apt-get remove -y $ethtype
 
 heading "Updating repos"
@@ -68,16 +68,16 @@ sudo add-apt-repository -y ppa:ethereum/ethereum-dev
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-heading "Installing ethereum"
+heading "Installing Krypton"
 sudo apt-get install -y $ethtype
 
-heading "Updating eth-netstats client"
+heading "Updating KR-netstats client"
 cd ~/bin/www
 git pull
 sudo npm update
 cd ..
 
-success "Ethereum was updated successfully"
+success "Krypton was updated successfully"
 
 heading "Restarting processes"
 pm2 start processes.json
